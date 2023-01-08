@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name = "format-detection" content = "telephone=no">
+
+    <title>Achievements | Eine iOS® App von Max Schluer</title>
+
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel=”mask-icon” type="image/svg+xml" href=”icon.svg” color=”#000000">
+    <link rel="apple-touch-icon" type="image/svg+xml" href="icon.svg">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    async function showArrowBrackets(elementID) {
+        document.styleSheets[0].insertRule("#" + elementID + ":before { content: '> '; font-weight: 900; } ");
+        document.styleSheets[0].insertRule("#" + elementID + ":after { content: ' <'; font-weight: 900; } ");
+    }
+
+    async function hideArrowBrackets(elementID) {
+        document.styleSheets[0].deleteRule("#" + elementID + ":before");
+        document.styleSheets[0].deleteRule("#" + elementID + ":after");
+    }
+</script>
+
+<body>
+
+<div class="container-centered">
+    <object data="logo.svg" type="image/svg+xml" width="70%" role="img"></object>
+</div>
+
+<div class="spacer"></div>
+
+<div class="container-centered">
+    <h1>Achievements</h1>
+    <p id="subheadline">Eine iOS® App von Max Schluer</p>
+    <p><a href="https://maximilian-schluer.de" onmouseover="showArrowBrackets('websiteLink')" onmouseout="hideArrowBrackets('websiteLink')" id="websiteLink">Website</a></p>
+</div>
+
+<div class="container-centered">
+    <h2>Links</h2>
+
+    <div class="item">
+        <p><a href="https://github.com/mschluer/achievements_ios/tree/master" onmouseover="showArrowBrackets('codeLink')" onmouseout="hideArrowBrackets('codeLink')" id="codeLink">Quellcode</a></p>
+    </div>
+
+    <div class="item">
+        <p><a href="https://sonarcloud.io/project/overview?id=mschluer_achievements_ios" onmouseover="showArrowBrackets('sonarLink')" onmouseout="hideArrowBrackets('sonarLink')" id="sonarLink">sonarcloud</a></p>
+    </div>
+
+    <div class="item">
+        <p><a href="impressum.html" onmouseover="showArrowBrackets('impressumLink')" onmouseout="hideArrowBrackets('impressumLink')" id="impressumLink">Impressum</a></p>
+    </div>
+
+    <div class="item">
+        <p><a href="datenschutz.html" onmouseover="showArrowBrackets('datenschutzLink')" onmouseout="hideArrowBrackets('datenschutzLink')" id="datenschutzLink">Datenschutz</a></p>
+    </div>
+</div>
+
+</body>

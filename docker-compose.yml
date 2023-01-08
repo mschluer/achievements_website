@@ -1,0 +1,21 @@
+services:
+  website:
+    container_name: "achievements-website"
+    build: .
+    expose:
+      - "80"
+    restart: always
+    environment:
+      - "VIRTUAL_HOST=achievements.max-schluer.de,www.achievements.max-schluer.de"
+      - "LETSENCRYPT_HOST=achievements.max-schluer.de,www.achievements.max-schluer.de"
+    healthcheck:
+      test: "ss --listening --tcp | grep -P 'LISTEN.+:smtp' || exit 1"
+      timeout: 3s
+      retries: 0
+    networks:
+      - rproxy
+
+networks:
+  rproxy:
+    name: rproxy
+    external: true
